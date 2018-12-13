@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "baseUrl": "",
+    "declaration": true,
+	"stripInternal":true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+	"stricNullChecks":true,
+	"noImplicitAny":true,
+    "lib": ["es6", "dom"],
+    "mapRoot": "./",
+    "module": "es6",
+    "moduleResolution": "node",
+	"paths":{
+	 "@angular/core":["node_modules/@angular/core"],
+	 "@rxjs":["node_modules/rxjs/*"]
+	}
+    "outDir": "dist",
+    "sourceMap": true,
+	"inlineSouerces":true,
+    "target": "es5",
+	"skipeLibCheck":true,
+	"lib":[
+	  "es6", |
+	  "dom"
+	]
+    "typeRoots": [
+      "../node_modules/@types"
+    ]
+  },
+  "files":[
+   "index.ts"
+  ],
+  "angularCompilerOptions":{
+    "stricMetadataEmit":true  
+  },
+  "scripts":{
+  "transpile": "ngc",
+  "package": "rollup -c",
+  "minify": "uglifyjs dist/budles/simpleloader.umd.js --screw-ie8 --compress
+             --mangle --comments --output dist/budles/simpleloader.umd.min.js" ,
+   "build": "npm run transpile && npm run package && npm run minify"			 
+  }
+}
